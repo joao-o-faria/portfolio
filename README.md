@@ -1,30 +1,60 @@
 # Portfólio — João Pedro Faria
 
-Portfólio profissional pessoal. Single-page, bilíngue (PT/EN), tema claro/escuro.
+> Cartão de visita digital de um Desenvolvedor Full Stack (.NET + Angular).
 
-**Live:** https://jl2218.github.io/portfolio/ (após habilitar GitHub Pages)
+**[Acesse o site →](https://jl2218.github.io/portfolio/)**
 
-**Stack:** HTML + CSS + JavaScript vanilla. Sem build, sem dependências.
+Single-page, bilíngue (PT/EN), tema claro/escuro, totalmente responsivo. Sem build, sem dependências externas.
+
+---
+
+## Sobre
+
+Desenvolvedor Full Stack com experiência em sistemas críticos para o setor financeiro. Atuação atual na **Nexgs**, em projetos como Banco Original (jornada de compliance PLD/KYC), Grupo Suno (plataforma multi-produto) e HubCred (fintech de crédito event-driven). Experiência prévia na **B2ML Sistemas** com microsserviços Java/Spring no projeto SafeTrace · Bayer PRO Carbono Commodities.
+
+- **Localização:** Pouso Alegre, MG · Brasil
+- **Formação:** Bacharelado em Sistemas de Informação — Centro Universitário Una
+- **E-mail:** [joaopedropepe56@gmail.com](mailto:joaopedropepe56@gmail.com)
+- **LinkedIn:** [linkedin.com/in/joao-pedro-faria-dev](https://www.linkedin.com/in/joao-pedro-faria-dev/)
+
+---
+
+## Por dentro do site
+
+| | |
+|---|---|
+| **Stack** | HTML5 · CSS3 · JavaScript vanilla |
+| **Build** | Nenhum — arquivos estáticos servidos direto |
+| **Idiomas** | PT (padrão) + EN, com toggle persistente em `localStorage` |
+| **Tema** | claro/escuro, com persistência e respeito a `prefers-color-scheme` |
+| **Responsivo** | mobile-first, breakpoints 480 / 640 / 960px |
+| **Acessibilidade** | WCAG AA, skip-link, `prefers-reduced-motion`, fallback `<noscript>` |
+| **Fonte** | Inter Variable self-hosted (zero requests externos) |
+| **Hospedagem** | GitHub Pages |
+
+---
 
 ## Rodar local
 
-```powershell
-# Opção 1: Python
-python -m http.server 8000
+Qualquer servidor estático serve:
 
-# Opção 2: Node (npx, sem instalar nada)
+```bash
+python -m http.server 8000
+# ou
 npx serve .
 ```
 
 Acesse `http://localhost:8000`.
 
+---
+
 ## Estrutura
 
 ```
 portfolio/
-├── index.html          # estrutura semântica + data-i18n hooks
-├── styles.css          # tokens, layout, componentes, media queries
-├── main.js             # i18n + theme toggle + mobile nav + reveal
+├── index.html      # Estrutura semântica + hooks data-i18n
+├── styles.css      # Tokens, layout, componentes, media queries
+├── main.js         # i18n, theme toggle, mobile nav, reveal-on-scroll
 └── assets/
     ├── fonts/Inter-Variable.woff2
     ├── cv-joao-faria-pt.pdf
@@ -32,55 +62,3 @@ portfolio/
     ├── favicon.svg
     └── favicon.png
 ```
-
-## Atualizar conteúdo
-
-- **Textos:** editar o objeto `i18n` no topo de `main.js` (chaves PT e EN espelhadas)
-- **CV:** atualizar `assets/cv-joao-faria-pt.pdf` e `assets/cv-joao-faria-en.pdf` (gerados via Ctrl+P nos arquivos `cv-pt.html` / `cv-en.html`)
-- **Cores/fontes:** variáveis CSS no topo de `styles.css` (seção `TOKENS`)
-- **Experiência/educação:** editar as `<article class="timeline-item">` em `index.html` e adicionar chaves no `i18n`
-
-## Deploy no GitHub Pages
-
-### Primeiro deploy
-
-1. Repositório já criado: `jl2218/portfolio`
-2. Push do branch `main`:
-   ```powershell
-   git push -u origin main
-   ```
-3. No repo no GitHub: **Settings → Pages → Source:** branch `main`, folder `/ (root)` → **Save**
-4. Aguardar ~1 min, acessar `https://jl2218.github.io/portfolio/`
-
-### Updates futuros
-
-```powershell
-git add .
-git commit -m "feat: update <o que mudou>"
-git push
-```
-
-GitHub Pages republica em ~30s.
-
-## Performance & A11y
-
-- Lighthouse alvo: Performance ≥95, Accessibility ≥95, Best Practices ≥95, SEO ≥90
-- Sem dependências externas (CDN, Google Fonts) — tudo self-hosted
-- Respeita `prefers-color-scheme` e `prefers-reduced-motion`
-- WCAG AA mínimo (contraste preto/branco cumpre AAA)
-- Fallback `<noscript>` mantém conteúdo visível mesmo sem JS
-
-## Customizações comuns
-
-**Trocar fonte:**
-1. Substituir arquivo em `assets/fonts/`
-2. Atualizar `@font-face` em `styles.css`
-3. Atualizar `--font-sans` no `:root`
-
-**Trocar cores:**
-Editar variáveis em `:root` (tema claro) e `[data-theme="dark"]` (tema escuro) no topo de `styles.css`.
-
-**Adicionar nova seção:**
-1. Adicionar `<section>` em `index.html` seguindo o padrão das existentes (com `data-i18n` nos textos e classe `.reveal` para animação)
-2. Adicionar chaves no objeto `i18n` em `main.js`
-3. Adicionar link na nav (desktop + mobile)
