@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="João Pedro Faria — Desenvolvedor Full Stack (.NET, Angular). Portfólio profissional." data-i18n="meta.description" data-i18n-attr="content">
+  <meta property="og:title" content="João Pedro Faria — Full Stack Developer">
+  <meta property="og:description" content="Desenvolvedor Full Stack (.NET, Angular). Pouso Alegre, MG.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title data-i18n="meta.title">João Pedro Faria — Full Stack Developer</title>
+
+  <!-- FOUC prevention: aplica tema antes do CSS pintar -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('portfolio:theme');
+        var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefers ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Pular para o conteúdo</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <a href="#" class="logo" aria-label="João Pedro Faria">JPF</a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#experiencia" data-i18n="nav.experience">Experiência</a></li>
+          <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+          <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="topbar-controls">
+        <button class="lang-toggle" type="button" aria-label="Trocar idioma">
+          <span data-lang-label>PT</span>
+        </button>
+        <button class="theme-toggle" type="button" aria-label="Trocar tema">
+          <span data-theme-label>☾</span>
+        </button>
+        <button class="nav-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <ul>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#experiencia" data-i18n="nav.experience">Experiência</a></li>
+        <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow reveal"><span data-i18n="hero.eyebrow">Full Stack Developer · Disponível</span></p>
+        <h1 class="hero-name reveal" data-i18n="hero.name">João Pedro<br>Faria.</h1>
+        <p class="hero-sub reveal" data-i18n="hero.sub">Construo aplicações web com .NET e Angular. Atualmente na Nexgs, focado em sistemas internos seguros e performáticos.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="assets/cv-joao-faria-pt.pdf" download data-cv-link>
+            <span data-i18n="hero.cv">Baixar CV</span> ↓
+          </a>
+          <a class="btn btn-secondary" href="#contato">
+            <span data-i18n="hero.contact">Contato</span> →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container section-grid">
+        <div class="section-label">01 / <span data-i18n="section.about">Sobre</span></div>
+        <div class="section-content reveal">
+          <p data-i18n="about.body">Desenvolvedor Full Stack com experiência em aplicações web escaláveis usando .NET e Angular. Atuo na criação de sistemas de controle interno, integrações de APIs e otimização de performance. Estudante de Sistemas de Informação no Centro Universitário Una, em constante evolução técnica e profissional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container section-grid">
+        <div class="section-label">02 / <span data-i18n="section.experience">Experiência</span></div>
+        <div class="section-content">
+
+          <article class="timeline-item reveal">
+            <div class="timeline-period">2024 — <span data-i18n="timeline.now">Hoje</span></div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Full Stack Developer</h3>
+              <p class="timeline-meta">Nexgs · <span data-i18n="timeline.remote">Remoto</span></p>
+              <p class="timeline-intro" data-i18n="exp.nexgs-intro">Atuação full stack em três produtos críticos para clientes do setor financeiro:</p>
+
+              <div class="timeline-sub">
+                <h4 class="sub-title">Banco Original — <span data-i18n="exp.nexgs.banco-tag">Jornada de Compliance PLD/KYC</span></h4>
+                <ul class="sub-list">
+                  <li data-i18n="exp.nexgs.banco.b1">Plataforma horizontal de compliance PLD/KYC com motor de regras desacoplado, separando regras regulatórias de políticas de risco do banco.</li>
+                  <li data-i18n="exp.nexgs.banco.b2">Pipeline de eventos de decisão imutáveis para auditoria e re-treinamento de modelos, consumido em onboarding, transações e produtos de crédito.</li>
+                  <li data-i18n="exp.nexgs.banco.b3">Integrações com serviços de KYC do mercado com normalização de dados; dashboards operacionais e ambiente de simulação histórica de impacto regulatório.</li>
+                  <li data-i18n="exp.nexgs.banco.b4">Trilha de auditoria automática: consulta de histórico de decisão passou de esforço manual por caso para consulta estruturada em horas.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-sub">
+                <h4 class="sub-title">Grupo Suno — <span data-i18n="exp.nexgs.suno-tag">Fundação técnica multi-produto</span></h4>
+                <ul class="sub-list">
+                  <li data-i18n="exp.nexgs.suno.b1"><strong>Suno Core</strong> — Consolidação das integrações fragmentadas entre CRM, billing, autenticação e entrega de conteúdo numa fundação única — lançamentos de produto passaram de ciclos de semanas para deploys de configuração.</li>
+                  <li data-i18n="exp.nexgs.suno.b2"><strong>Status Invest</strong> — Plataforma de dados em três camadas (ingestão → consolidação financeira → exposição), armazenamento time-series com retenção por granularidade e cache multi-camada com invalidação por evento.</li>
+                  <li data-i18n="exp.nexgs.suno.b3"><strong>Plataforma GPS (Assessoria)</strong> — Multi-tenancy por organização com isolamento lógico, separação execução/análise para SLAs independentes e integrações idempotentes com custódia/brokerage.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-sub">
+                <h4 class="sub-title">HubCred</h4>
+                <ul class="sub-list">
+                  <li data-i18n="exp.nexgs.hubcred.b1">Fintech de crédito construída do zero com arquitetura orientada a eventos como backbone de rastreabilidade e escalabilidade — processamento distribuído de decisões de crédito via streams imutáveis.</li>
+                  <li data-i18n="exp.nexgs.hubcred.b2">Plataforma multi-tenant com isolamento por parceiro, sharding controlado e políticas de acesso baseadas em eventos, suportando múltiplos clientes simultâneos.</li>
+                  <li data-i18n="exp.nexgs.hubcred.b3">Jornadas de crédito parametrizáveis por tenant sem necessidade de deploy; integrações idempotentes com bureaus, assinatura digital e cobrança, com reconciliação automática.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-period">2023 — 2024</div>
+            <div class="timeline-body">
+              <h3 class="timeline-role"><span data-i18n="exp.b2ml-role">Analista de TI</span></h3>
+              <p class="timeline-meta">B2ML Sistemas · <span data-i18n="timeline.remote">Remoto</span></p>
+              <p class="timeline-intro" data-i18n="exp.b2ml-note">Iniciei como Estagiário em Desenvolvimento Web e fui efetivado como Analista de TI em mai/2024.</p>
+
+              <div class="timeline-sub">
+                <h4 class="sub-title">SafeTrace · Bayer PRO Carbono Commodities</h4>
+                <ul class="sub-list">
+                  <li data-i18n="exp.b2ml.b1">Microsserviços com Java 17 + Spring Boot para rastreabilidade de alimentos e controle de estoque.</li>
+                  <li data-i18n="exp.b2ml.b2">Integração de dados de produtores no PRO Carbono Commodities (Bayer).</li>
+                  <li data-i18n="exp.b2ml.b3">Modelagem e otimização de esquemas em PostgreSQL e MongoDB com JPA/Hibernate.</li>
+                  <li data-i18n="exp.b2ml.b4">TDD/BDD com JUnit, Mockito e Hamcrest, com alta cobertura nas entregas críticas.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-period">2023 — 2026</div>
+            <div class="timeline-body">
+              <h3 class="timeline-role"><span data-i18n="edu.una-role">Bacharelado em Sistemas de Informação</span></h3>
+              <p class="timeline-meta">Centro Universitário Una</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="container section-grid">
+        <div class="section-label">03 / <span data-i18n="section.stack">Stack</span></div>
+        <div class="section-content">
+          <div class="stack-grid">
+            <div class="stack-col reveal">
+              <h4 class="stack-title">Backend</h4>
+              <ul class="stack-list">
+                <li>C# · .NET</li>
+                <li>ASP.NET Core</li>
+                <li>Entity Framework Core</li>
+                <li>SQL Server · PostgreSQL</li>
+              </ul>
+            </div>
+            <div class="stack-col reveal">
+              <h4 class="stack-title">Frontend</h4>
+              <ul class="stack-list">
+                <li>Angular</li>
+                <li>TypeScript</li>
+                <li>HTML5 · CSS3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contato">
+      <div class="container">
+        <div class="section-label">04 / <span data-i18n="section.contact">Contato</span></div>
+        <h2 class="contact-headline reveal" data-i18n="contact.headline">Vamos conversar?</h2>
+        <ul class="contact-links reveal">
+          <li><a href="mailto:joaopedropepe56@gmail.com">joaopedropepe56@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/joao-pedro-faria-dev/" target="_blank" rel="noopener">linkedin ↗</a></li>
+          <li><a href="https://github.com/jl2218" target="_blank" rel="noopener">github ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 João Pedro Faria</span>
+      <span data-i18n="footer.location">Pouso Alegre, MG · Brasil</span>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
