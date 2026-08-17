@@ -2,7 +2,7 @@
 
 > Cartão de visita digital de um Desenvolvedor Full Stack (.NET + Angular).
 
-**[Acesse o site →](https://jl2218.github.io/portfolio/)**
+**[Acesse o site →](https://joao-o-faria.github.io/portfolio/)**
 
 Single-page, bilíngue (PT/EN), tema claro/escuro, totalmente responsivo. Sem build, sem dependências externas.
 
