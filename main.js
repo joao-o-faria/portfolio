@@ -3,6 +3,11 @@
 
   // ============================================
   // ANALYTICS (GA4)
+  //
+  // Download de CV e cliques outbound NAO sao tratados aqui: o Enhanced
+  // Measurement do GA4 ja emite file_download e click automaticamente, com
+  // mais parametros (link_text, link_id, link_classes, link_domain).
+  // Aqui ficam so os eventos que ele nao cobre.
   // ============================================
   function track(name, params) {
     if (typeof window.gtag !== 'function') return;
@@ -273,34 +278,6 @@
   }
 
   // ============================================
-  // ANALYTICS BINDINGS
-  // ============================================
-  function initAnalytics() {
-    const cvLink = document.querySelector('[data-cv-link]');
-    if (cvLink) {
-      cvLink.addEventListener('click', () => {
-        const href = cvLink.getAttribute('href') || '';
-        track('file_download', {
-          file_name: href.split('/').pop(),
-          file_extension: 'pdf',
-          link_url: href
-        });
-      });
-    }
-
-    document.querySelectorAll('a[href^="http"]').forEach(link => {
-      if (link.hostname === window.location.hostname) return;
-      link.addEventListener('click', () => {
-        track('click', {
-          link_url: link.href,
-          link_domain: link.hostname,
-          outbound: true
-        });
-      });
-    });
-  }
-
-  // ============================================
   // INIT
   // ============================================
   document.addEventListener('DOMContentLoaded', () => {
@@ -308,7 +285,6 @@
     initTheme();
     initMobileNav();
     initReveal();
-    initAnalytics();
   });
 
 })();
