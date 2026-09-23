@@ -2,6 +2,14 @@
   'use strict';
 
   // ============================================
+  // ANALYTICS (GA4)
+  // ============================================
+  function track(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
+  // ============================================
   // I18N
   // ============================================
   const i18n = {
@@ -153,7 +161,9 @@
     if (toggle) {
       toggle.addEventListener('click', () => {
         const current = getLang();
-        applyLang(current === 'pt' ? 'en' : 'pt');
+        const next = current === 'pt' ? 'en' : 'pt';
+        applyLang(next);
+        track('language_change', { language: next });
       });
     }
   }
@@ -181,6 +191,7 @@
       toggle.addEventListener('click', () => {
         const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         applyTheme(next);
+        track('theme_change', { theme: next });
       });
     }
   }
@@ -262,6 +273,34 @@
   }
 
   // ============================================
+  // ANALYTICS BINDINGS
+  // ============================================
+  function initAnalytics() {
+    const cvLink = document.querySelector('[data-cv-link]');
+    if (cvLink) {
+      cvLink.addEventListener('click', () => {
+        const href = cvLink.getAttribute('href') || '';
+        track('file_download', {
+          file_name: href.split('/').pop(),
+          file_extension: 'pdf',
+          link_url: href
+        });
+      });
+    }
+
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      if (link.hostname === window.location.hostname) return;
+      link.addEventListener('click', () => {
+        track('click', {
+          link_url: link.href,
+          link_domain: link.hostname,
+          outbound: true
+        });
+      });
+    });
+  }
+
+  // ============================================
   // INIT
   // ============================================
   document.addEventListener('DOMContentLoaded', () => {
@@ -269,6 +308,7 @@
     initTheme();
     initMobileNav();
     initReveal();
+    initAnalytics();
   });
 
 })();
