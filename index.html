@@ -112,19 +112,22 @@
         <div class="section-content">
 
           <article class="timeline-item reveal">
-            <div class="timeline-period">2024 — <span data-i18n="timeline.now">Hoje</span></div>
+            <div class="timeline-period"><span data-i18n="exp.nexgs-period">out/2024</span> — <span data-i18n="timeline.now">Hoje</span></div>
             <div class="timeline-body">
               <h3 class="timeline-role">Full Stack Developer</h3>
               <p class="timeline-meta">Nexgs · <span data-i18n="timeline.remote">Remoto</span></p>
               <p class="timeline-intro" data-i18n="exp.nexgs-intro">Atuação full stack em três produtos críticos para clientes do setor financeiro:</p>
 
               <div class="timeline-sub">
-                <h4 class="sub-title">Banco Original — <span data-i18n="exp.nexgs.banco-tag">Jornada de Compliance PLD/KYC</span></h4>
+                <h4 class="sub-title">Banco Original — <span data-i18n="exp.nexgs.banco-tag">Compliance PLD/KYC e plataforma de agentes de IA</span></h4>
                 <ul class="sub-list">
                   <li data-i18n="exp.nexgs.banco.b1">Plataforma horizontal de compliance PLD/KYC com motor de regras desacoplado, separando regras regulatórias de políticas de risco do banco.</li>
                   <li data-i18n="exp.nexgs.banco.b2">Pipeline de eventos de decisão imutáveis para auditoria e re-treinamento de modelos, consumido em onboarding, transações e produtos de crédito.</li>
                   <li data-i18n="exp.nexgs.banco.b3">Integrações com serviços de KYC do mercado com normalização de dados; dashboards operacionais e ambiente de simulação histórica de impacto regulatório.</li>
                   <li data-i18n="exp.nexgs.banco.b4">Trilha de auditoria automática: consulta de histórico de decisão passou de esforço manual por caso para consulta estruturada em horas.</li>
+                  <li data-i18n="exp.nexgs.banco.b5"><strong>Figaro</strong> — Plataforma corporativa de agentes de IA: APIs de runtime, catálogo e auditoria; proxy de LLM compatível com a API da OpenAI (AWS Bedrock e outros provedores); serviço de RAG; ferramentas expostas aos agentes por servidores MCP.</li>
+                  <li data-i18n="exp.nexgs.banco.b6"><strong>Figaro Desktop</strong> — Aplicativo Electron + React com SSO corporativo, atualização automática por canal e trilha de auditoria por tenant.</li>
+                  <li data-i18n="exp.nexgs.banco.b7">Diagnóstico de falhas em produção pelos logs no Dynatrace: conversas longas estouravam a janela de contexto do modelo; entrega de um erro específico para o caso.</li>
                 </ul>
               </div>
 
@@ -133,6 +136,10 @@
                 <ul class="sub-list">
                   <li data-i18n="exp.nexgs.suno.b1"><strong>Suno Core</strong> — Consolidação das integrações fragmentadas entre CRM, billing, autenticação e entrega de conteúdo numa fundação única — lançamentos de produto passaram de ciclos de semanas para deploys de configuração.</li>
                   <li data-i18n="exp.nexgs.suno.b2"><strong>Status Invest</strong> — Plataforma de dados em três camadas (ingestão → consolidação financeira → exposição), armazenamento time-series com retenção por granularidade e cache multi-camada com invalidação por evento.</li>
+                  <li data-i18n="exp.nexgs.suno.b4"><strong>Status Invest · Ingestão</strong> — Ingestão de 16 fontes de dados (CVM, B3, SEC, Banco Central, IBGE, ANBIMA, Nasdaq, CoinMarketCap e fornecedores de market data), com workers por fila, PostgreSQL e base de leitura em MongoDB.</li>
+                  <li data-i18n="exp.nexgs.suno.b5"><strong>Status Invest · Séries temporais</strong> — Modelo reutilizável de séries temporais: 26 séries econômicas do Banco Central e do IBGE com histórico de revisões, além de séries diárias de preços, composições de índices e cotas de fundos.</li>
+                  <li data-i18n="exp.nexgs.suno.b6"><strong>Status Invest · Qualidade de dados</strong> — Colunas de preço trocadas no feed de um fornecedor (preço ajustado no lugar do fechamento), confirmadas em 2,7 milhões de linhas; análise de outliers em 7,27 milhões de negociações; conciliação exata de linhas na ingestão, validada em cargas de 20 mil a 659 mil registros.</li>
+                  <li data-i18n="exp.nexgs.suno.b7"><strong>Status Invest · Carteiras</strong> — Cálculos de carteira a partir das regras do cliente: dividend yield ponderado, yield on cost, compensação de day trade (FIFO) e IRRF, além do calendário de pregões da B3.</li>
                   <li data-i18n="exp.nexgs.suno.b3"><strong>Plataforma GPS (Assessoria)</strong> — Multi-tenancy por organização com isolamento lógico, separação execução/análise para SLAs independentes e integrações idempotentes com custódia/brokerage.</li>
                 </ul>
               </div>
@@ -143,17 +150,18 @@
                   <li data-i18n="exp.nexgs.hubcred.b1">Fintech de crédito construída do zero com arquitetura orientada a eventos como backbone de rastreabilidade e escalabilidade — processamento distribuído de decisões de crédito via streams imutáveis.</li>
                   <li data-i18n="exp.nexgs.hubcred.b2">Plataforma multi-tenant com isolamento por parceiro, sharding controlado e políticas de acesso baseadas em eventos, suportando múltiplos clientes simultâneos.</li>
                   <li data-i18n="exp.nexgs.hubcred.b3">Jornadas de crédito parametrizáveis por tenant sem necessidade de deploy; integrações idempotentes com bureaus, assinatura digital e cobrança, com reconciliação automática.</li>
+                  <li data-i18n="exp.nexgs.hubcred.b4">Investigações de dados em produção com SQL, agrupando registros inconsistentes por causa raiz para separar o que se corrige nos dados do que depende de decisão de negócio.</li>
                 </ul>
               </div>
             </div>
           </article>
 
           <article class="timeline-item reveal">
-            <div class="timeline-period">2023 — 2024</div>
+            <div class="timeline-period" data-i18n="exp.b2ml-period">jul/2023 — out/2024</div>
             <div class="timeline-body">
               <h3 class="timeline-role"><span data-i18n="exp.b2ml-role">Analista de TI</span></h3>
               <p class="timeline-meta">B2ML Sistemas · <span data-i18n="timeline.remote">Remoto</span></p>
-              <p class="timeline-intro" data-i18n="exp.b2ml-note">Iniciei como Estagiário em Desenvolvimento Web e fui efetivado como Analista de TI em mai/2024.</p>
+              <p class="timeline-intro" data-i18n="exp.b2ml-note">Iniciei como Estagiário em Desenvolvimento Web em jul/2023 e fui efetivado como Analista de TI em mai/2024.</p>
 
               <div class="timeline-sub">
                 <h4 class="sub-title">SafeTrace · Bayer PRO Carbono Commodities</h4>
@@ -168,7 +176,7 @@
           </article>
 
           <article class="timeline-item reveal">
-            <div class="timeline-period">2023 — 2026</div>
+            <div class="timeline-period" data-i18n="edu.una-period">2023 — 2026 (previsão)</div>
             <div class="timeline-body">
               <h3 class="timeline-role"><span data-i18n="edu.una-role">Bacharelado em Sistemas de Informação</span></h3>
               <p class="timeline-meta">Centro Universitário Una</p>
@@ -190,7 +198,7 @@
                 <li>C# · .NET</li>
                 <li>ASP.NET Core</li>
                 <li>Entity Framework Core</li>
-                <li>SQL Server · PostgreSQL</li>
+                <li>Java · Spring Boot</li>
               </ul>
             </div>
             <div class="stack-col reveal">
@@ -198,7 +206,26 @@
               <ul class="stack-list">
                 <li>Angular</li>
                 <li>TypeScript</li>
+                <li>React · Electron</li>
                 <li>HTML5 · CSS3</li>
+              </ul>
+            </div>
+            <div class="stack-col reveal">
+              <h4 class="stack-title" data-i18n="stack.data">Dados & IA</h4>
+              <ul class="stack-list">
+                <li>SQL Server · PostgreSQL</li>
+                <li>MongoDB · Redis</li>
+                <li data-i18n="stack.timeseries">Séries temporais</li>
+                <li data-i18n="stack.agents">Agentes de LLM · RAG · MCP</li>
+              </ul>
+            </div>
+            <div class="stack-col reveal">
+              <h4 class="stack-title" data-i18n="stack.cloud">Cloud & DevOps</h4>
+              <ul class="stack-list">
+                <li>AWS (EKS, SQS, RDS, Bedrock)</li>
+                <li>Docker · Kubernetes</li>
+                <li>Azure DevOps · CI/CD</li>
+                <li>Dynatrace</li>
               </ul>
             </div>
           </div>
